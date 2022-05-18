@@ -1,9 +1,19 @@
-{% if latest_question_list %}
+{% if list_users %}
     <ul>
-    {% for question in latest_question_list %}
-    <li><a href="{% url 'main_app:index' user.id %}">{{ user.user_text }}</a></li>
+    {% for user in list_users %}
+        <li><a href="/main_app/{{ user.id }}/">{{ user.prenom}} {{ user.nom }} {{ user.date_create}}</a></li>
     {% endfor %}
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <p>liste user is not available.</p>
+{% endif %}
+
+{% if list_sessions %}
+    <ul>
+    {% for session in list_sessions %}
+        <li><a href="/main_app/{{ session.id }}/">{{ session.create_date }} {{ session.user_id }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>liste session is not available.</p>
 {% endif %}
