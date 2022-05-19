@@ -29,3 +29,8 @@ def sessions(request):
         'list_sessions': list_sessions,
     }
     return HttpResponse(template.render(context, request))
+
+def details(request,user_id):
+    utilisateur = User.objects.get(pk=1)
+    # list_sessions = utilisateur.session_set.all
+    return render(request, 'main_app/detail.html', {'user': utilisateur})

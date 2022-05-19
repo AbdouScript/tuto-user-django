@@ -1,12 +1,12 @@
 {% if list_users %}
-    <ul>
+<ul>
     {% for user in list_users %}
         <li><a href="/main_app/{{ user.id }}/">{{ user.prenom}} {{ user.nom }} {{ user.date_create}}</a></li>
     {% endfor %}
     </ul>
-{% else %}
+    {% else %}
     <p>liste user is not available.</p>
-{% endif %}
+    {% endif %}
 
 {% if list_sessions %}
     <ul>
@@ -17,3 +17,10 @@
 {% else %}
     <p>liste session is not available.</p>
 {% endif %}
+
+<h1>{{ user.prenom }}</h1>
+<ul>
+{% for session in user.session_set.all %}
+    <li>{{ session.id }}</li>
+{% endfor %}
+</ul>
