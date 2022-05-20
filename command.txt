@@ -1,0 +1,30 @@
+creer un environnement : python -m venv "nom_environnement"
+lancer l'environnement : cd "nom_env"\script\activate
+quitter l'environnement : deactivate
+installer django : pip install django
+voir la version de django : python -m django --version
+creer un project : django-admin startproject "nom_project"
+creer un sous projet : py manage.py startapp main_app
+
+Appeler une fonction : nomfonction()
+Creer les migrations : py manage.py makemigrations
+Appliquer les migrations : py manage.py migration
+
+from main_app.models import User, Session
+from django.utils import timezone
+main_app											
+
+view : est une fonction Python acceptant une requête web et renvoyant une réponse web.
+modele : 
+
+
+from django.db import models
+
+s=Session.objects.get(pk=1) #on crée une variable pour avoir l'élément n°1 de la classe Session
+moi=User.objects.get(pk=1) #on crée une variable pour avoir l'élément n°1 de la classe User
+moi.session_set.all() #On regarde les session en commun qui correspondent pour la variable moi
+lui=User.objects.get(pk=2) #on crée une variable pour avoir l'élément n°2 de la classe User
+lui.session_set.all() #On regarde les session en commun qui correspondent pour la variable lui	
+
+
+https://stackoverflow.com/questions/26185687/you-are-trying-to-add-a-non-nullable-field-new-field-to-userprofile-without-a
