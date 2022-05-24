@@ -1,0 +1,15 @@
+{% if user %}
+<h1>Bienvenue sur ton espace personnel !</h1>
+<p>Voici tes informations personnels :</p>
+    <ul>
+    
+        <li> Prénom : {{ user.prenom}}</li>
+        <li> Nom de famille : {{ user.nom }}</li>
+        <li> Adresse Email : {{ user.email_user}}</li>
+        <li> Date de création : {{ user.date_create}}</li>
+        <li> Ton mot de passe : {{ user.password}}</li>
+        
+    </ul>
+{% else %}
+    <p>user is not available.</p>
+{% endif %}

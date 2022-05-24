@@ -1,6 +1,9 @@
-<form action="/app/connexion/" method="post">
+<form action="/app/profil/" method="post">
     {% csrf_token %}
-    {%if context.error %} <h1>une erreur s'est produite {{context.error}}</h1> {%endif%}
+    <label for="nom">Votre nom : </label>
+    <input id="nom" type="text" name="nom" value="{{ user.nom }}">
+    <label for="prenom">Votre prenom : </label>
+    <input id="prenom" type="text" name="prenom" value="{{ user.prenom }}">
     <label for="email_user">Votre email : </label>
     <input id="email_user" type="text" name="email_user" value="{{ user.email_user }}">
     <label for="password">Votre mot de passe : </label>

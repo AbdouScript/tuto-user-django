@@ -14,10 +14,12 @@ class User(models.Model) :
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)
     date_create = models.DateTimeField(default=timezone.now)
-    email_user = models.CharField(max_length=140, default='google@gmail.com')
+    email_user = models.EmailField(max_length=140, default='google@gmail.com')
     password = models.CharField(max_length=32, default="password")
 
 class Session(models.Model) :
     create_date = models.DateTimeField(default=timezone.now)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
 
